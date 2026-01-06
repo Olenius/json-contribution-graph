@@ -2,6 +2,10 @@
 
 Generator for HTML page with GitHub-style contribution graph based on JSON data.
 
+## Example
+
+![Example contribution graph](example.png)
+
 ## Project Structure
 
 ```
