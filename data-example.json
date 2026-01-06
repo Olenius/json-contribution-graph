@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "name": "Math",
+      "code": "m",
+      "color": "#1e88e5"
+    },
+    {
+      "name": "Video",
+      "code": "v",
+      "color": "#43a047"
+    },
+    {
+      "name": "Reading",
+      "code": "r",
+      "color": "#e53935"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2026-01-05",
+      "codes": ["m", "m", "v"]
+    },
+    {
+      "date": "2026-01-04",
+      "codes": ["m"]
+    },
+    {
+      "date": "2026-01-03",
+      "codes": ["v", "r"]
+    },
+    {
+      "date": "2026-01-02",
+      "codes": ["r", "r", "r"]
+    }
+  ]
+}

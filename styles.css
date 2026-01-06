@@ -1,0 +1,270 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #24292f;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1f2328;
+}
+
+.description {
+    font-size: 1.1em;
+    color: #656d76;
+    margin-top: 8px;
+}
+
+/* Graph wrapper */
+.graph-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+/* Graph grid */
+.graph {
+    display: inline-grid;
+    grid-template-rows: repeat(7, 12px);
+    grid-auto-flow: column;
+    grid-gap: 3px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+/* Day cell */
+.day {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    position: relative;
+}
+
+.day:hover {
+    transform: scale(1.4);
+    outline: 2px solid rgba(27, 31, 36, 0.15);
+    outline-offset: 2px;
+    z-index: 100;
+}
+
+.day-empty {
+    background-color: transparent;
+    cursor: default;
+}
+
+.day-empty:hover {
+    transform: none;
+    outline: none;
+}
+
+/* Statistics section */
+.statistics {
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.stats-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #1f2328;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.stat-item:hover {
+    background-color: #ebedf0;
+}
+
+.stat-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.stat-name {
+    flex: 1;
+    font-size: 1em;
+    color: #24292f;
+    font-weight: 500;
+}
+
+.stat-count {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1f2328;
+    background-color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.no-stats {
+    text-align: center;
+    color: #656d76;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.year-label {
+    font-size: 0.9em;
+    color: #656d76;
+    font-weight: 500;
+}
+
+/* Tooltip */
+.tooltip {
+    position: fixed;
+    background-color: rgba(27, 31, 36, 0.95);
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 8px 24px rgba(27, 31, 36, 0.2);
+    max-width: 300px;
+    white-space: nowrap;
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+.tooltip-date {
+    font-weight: 600;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 4px;
+}
+
+.tooltip-events {
+    margin-top: 6px;
+}
+
+.tooltip-event {
+    margin: 3px 0;
+    font-size: 12px;
+}
+
+.tooltip-empty {
+    color: #8b949e;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .description {
+        font-size: 1em;
+    }
+    
+    .graph {
+        grid-template-rows: repeat(7, 10px);
+        grid-gap: 2px;
+    }
+    
+    .day {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .stats-title {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .container {
+        padding: 20px 10px;
+    }
+    
+    .graph {
+        grid-template-rows: repeat(7, 8px);
+        grid-gap: 2px;
+    }
+    
+    .day {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .stats-title {
+        font-size: 1.2em;
+    }
+    
+    .stat-item {
+        padding: 10px 12px;
+    }
+    
+    .stat-name {
+        font-size: 0.9em;
+    }
+    
+    .stat-count {
+        font-size: 1em;
+        padding: 3px 10px;
+    }
+}
